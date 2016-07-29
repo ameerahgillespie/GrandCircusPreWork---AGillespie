@@ -1,0 +1,30 @@
+public class Chachaslidereverse {
+
+public static void main(String [] args ) {
+
+//enter your starting int number
+
+int prince = 1139777;
+
+// set reverse int to zero. while prince "int" is not equal to zero, loop code to multiply reverseint by 10
+
+int reverseint = 0;
+
+while( prince != 0 )
+
+{
+
+reverseint = reverseint * 10;
+
+//add modulus 10 to the reverse number
+
+reverseint = reverseint + prince % 10;
+
+//divide int prince by 10
+
+prince = prince / 10; }
+
+System.out.println("State reverse number in Prince voice: " + reverseint);
+
+}
+}
