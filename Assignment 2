@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class CalendarApplication {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in); 
+		// create a scanner object
+
+		int year1, year2, month1, month2, day1, day2;
+
+		// prompt for 1st input from user
+		System.out.println("Enter the first date: (format -> \"Y M D\")");
+
+		// read 1st input
+		year1 = input.nextInt(); 
+		month1 = input.nextInt();
+		day1 = input.nextInt();
+
+		// prompt for 2nd input from user
+		System.out.println("Enter the second date: (format -> \"Y M D\")");
+
+		// read 2nd input
+		year2 = input.nextInt(); 
+		month2 = input.nextInt();
+		day2 = input.nextInt();
+
+		// convert input to approx. days
+		int date1 = (year1 * 365 + month1 * 30) + day1; 
+		int date2 = (year2 * 365 + month2 * 30) + day2;
+
+		int durationdifferance = date2 - date1; // note this CAN be negative if date1 is after date2(I'll leave it to you to deside the action needed if that's true)
+
+		// convert back (this is again only an approximation)
+		int year = durationdifferance / 356;
+		int month = (durationdifferance % 365) / 30;
+		int day = (durationdifferance % 365) % 30;
+
+		// output the difference
+		System.out.println("Difference is: " + year + " " + month + " " + day);
+	}
+	}
